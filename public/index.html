@@ -24,7 +24,7 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto" id="authButtons">
-                <!-- Login Button will be inserted here if the user is not logged in -->
+
             </ul>
         </div>
     </nav>
@@ -36,16 +36,16 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Ensure the form exists before adding an event listener
+
         const addRecipeForm = document.getElementById('addRecipeForm');
         if (addRecipeForm) {
             addRecipeForm.addEventListener('submit', async function (event) {
-                event.preventDefault(); // Prevent default form submission
-                
-                console.log("Submit button clicked!"); // Debugging
+                event.preventDefault();
+
+                console.log("Submit button clicked!");
 
                 const titleField = document.getElementById('title');
-                const descriptionField = document.getElementById('description'); // Correct reference
+                const descriptionField = document.getElementById('description');
 
                 const formData = {
                     title: titleField.value,
@@ -63,7 +63,7 @@
                 if (response.ok) {
                     console.log('Recipe saved successfully');
                     alert('Recipe saved successfully! You can check it in the recipes page.');
-                    href = '/recipes.html'; // Redirect to recipes page
+                    href = '/recipes.html';
                 } else {
                     console.error('Failed to save recipe');
                     alert('Failed to save recipe. Please try again.');

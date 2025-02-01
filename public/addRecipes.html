@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html">RECIPEEEZ</a>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -38,13 +39,15 @@
             </div>
         </div>
 
-        <!-- Add Recipe Form -->
+        <!-- Add Recipe -->
         <form id="addRecipeForm" method="POST">
             <div class="form-group mb-4">
-                <input type="text" class="form-control fw-bold border-0 fs-4" name="title" id="title" placeholder="Recipe Title" required>
+                <input type="text" class="form-control fw-bold border-0 fs-4" name="title" id="title"
+                    placeholder="Recipe Title" required>
             </div>
             <div class="form-group mb-4">
-                <textarea required class="form-control pt-5 fs-4" id="description" name="description" placeholder="Recipe Description" rows="12"></textarea>
+                <textarea required class="form-control pt-5 fs-4" id="description" name="description"
+                    placeholder="Recipe Description" rows="12"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Add Recipe</button>
         </form>
@@ -53,16 +56,15 @@
     <script src="js/main.js"></script>
 
     <script>
-        // Ensure the form exists before adding an event listener
         const addRecipeForm = document.getElementById('addRecipeForm');
         if (addRecipeForm) {
             addRecipeForm.addEventListener('submit', async function (event) {
-                event.preventDefault(); // Prevent default form submission
-                
-                console.log("Submit button clicked!"); // Debugging
+                event.preventDefault();
+
+                console.log("Submit button clicked!");
 
                 const titleField = document.getElementById('title');
-                const descriptionField = document.getElementById('description'); // Correct reference
+                const descriptionField = document.getElementById('description');
 
                 const formData = {
                     title: titleField.value,
@@ -80,7 +82,7 @@
                 if (response.ok) {
                     console.log('Recipe saved successfully');
                     alert('Recipe saved successfully! You can check it in the recipes page.');
-                    href = '/recipes.html'; // Redirect to recipes page
+                    href = '/recipes.html';
                 } else {
                     console.error('Failed to save recipe');
                     alert('Failed to save recipe. Please try again.');
