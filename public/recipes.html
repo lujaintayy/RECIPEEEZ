@@ -1,0 +1,86 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">RECIPEEZ</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="recipes.html">Recipes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="addRecipes.html">Add Recipes</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto" id="authButtons">
+                <li class="nav-item">
+                    <button id="loginBtn" class="btn btn-outline-primary"> Login </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h1>Recipes</h1>
+        <div id="recipes-container" class="row">
+            <!-- Recipes will be dynamically added here -->
+        </div>
+    </div>
+
+   
+    <script src="js/main.js"></script>
+
+    <script>
+     // Ensure the form exists before adding an event listener
+     const addRecipeForm = document.getElementById('addRecipeForm');
+        if (addRecipeForm) {
+            addRecipeForm.addEventListener('submit', async function (event) {
+                event.preventDefault(); // Prevent default form submission
+                
+                console.log("Submit button clicked!"); // Debugging
+
+                const titleField = document.getElementById('title');
+                const descriptionField = document.getElementById('description'); // Correct reference
+
+                const formData = {
+                    title: titleField.value,
+                    description: descriptionField.value
+                };
+
+                console.log("Sending data:", formData);
+
+                const response = await fetch('/add', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    console.log('Recipe saved successfully');
+                    alert('Recipe saved successfully! You can check it in the recipes page.');
+                    href = '/recipes.html'; // Redirect to recipes page
+                } else {
+                    console.error('Failed to save recipe');
+                    alert('Failed to save recipe. Please try again.');
+                }
+            });
+        } else {
+            console.error("addRecipeForm not found!");
+        }
+
+        document.getElementById('loginBtn').addEventListener('click', function () {
+            window.location.href = '/auth/google';
+        });
+    </script>
+    
+</body>
+</html>

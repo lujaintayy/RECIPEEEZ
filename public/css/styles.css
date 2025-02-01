@@ -1,0 +1,119 @@
+body {
+    font-family: 'Courier New', Courier, monospace ;
+    margin: 0;
+    padding: 0;
+    background: url('/img/food5.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+.navbar {
+    background-color: #ffebfe; 
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(65, 45, 64, 0.1);
+}
+
+.navbar .navbar-brand {
+    color: rgb(109, 45, 106) ;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.navbar .nav-link {
+    color: rgb(150, 107, 148); 
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: rgb(196, 161, 194); 
+    text-decoration: underline;
+}
+
+.container {
+    margin-top: 120px;
+}
+
+h1 {
+    font-size: 36px;
+    font-family: 'Pacifico', cursive;
+    font-weight: bold;
+    color: rgb(155, 120, 153);
+    text-shadow: 3px 3px 3px rgb(221, 200, 220); 
+    margin-bottom: 20px;
+    text-transform: uppercase; 
+}
+
+button.btn-primary {
+    background-color: #331931;
+    color: rgb(243, 236, 236);
+    border: none;
+    padding: 10px 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+    background-color: #b491b1;
+}
+
+button.btn-outline-primary {
+    background-color: #331931;
+    color: rgb(243, 236, 236);
+    border: none;
+    padding: 10px 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btn-outline-primary:hover {
+    background-color: #b491b1;
+}
+
+#logoutBtn {
+    background-color: #331931;
+    color: rgb(243, 236, 236);
+    border: none;
+    padding: 10px 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#logoutBtn:hover {
+    background-color:  #b491b1;/* Darker red on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.recipe-card {
+    border: 2px solid #ddd;
+    padding: 30px;  /* Increase padding */
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    height: 400px;  /* Set a fixed height for the card */
+    width: 100%;  /* Make sure it takes up the full width */
+}
+
+.recipe-card h5 {
+    font-size: 2rem;  /* Larger font size for the title */
+    margin-bottom: 15px;
+}
+
+.recipe-card p {
+    font-size: 1.5rem;  /* Larger font size for the description */
+    height: 250px;  /* Allow enough space for the description */
+    overflow-y: auto;  /* Allow scroll for longer descriptions */
+}
+
