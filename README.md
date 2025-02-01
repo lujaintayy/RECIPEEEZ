@@ -7,6 +7,7 @@ RECIPEEEZ is an easy navigated webpage which was designed for users to find and 
 3. The webpage is designed to have very simple and clear interface to support all users
    
 #Flowchart:
+![image](https://github.com/user-attachments/assets/cd4fb4b3-44d0-4769-a6ee-d5b4543a25e5)
 
 #Technologies used:
 - Frontend: HTML, CSS, JAVASCRIPT (ES6), BOOTSRTAP (Used for styling)
